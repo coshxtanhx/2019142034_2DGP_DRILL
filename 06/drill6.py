@@ -15,6 +15,7 @@ chrc.draw_now(0, 90)
 x = 400
 y = 90
 deg = 0
+frame = 0
 move_flag = 0; # 0: 네모 / 1: 원운동
 while(1):
     clear_canvas_now()
@@ -39,5 +40,6 @@ while(1):
         x, y = 400, 90
     elif (move_flag == 0 and x == 400 and y == 90):
         move_flag = 1
-
     delay(0.01)
+
+close_canvas()
