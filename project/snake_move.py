@@ -110,7 +110,7 @@ def check_eat():
     if(field_array[gx+1][gy+1] & (field_dict['apple']+field_dict['player']) \
         == field_dict['apple'] + field_dict['player']):
         field_array[gx+1][gy+1] &= (65535- field_dict['apple'])
-        if(length < 109 * 109):
+        if(length < 10):
             for i in range(length, length + 12):
                 char_blue.append(blue_body(i, char_blue[length-1].x, char_blue[length-1].y))
             length += 12
