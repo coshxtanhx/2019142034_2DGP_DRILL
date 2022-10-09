@@ -1,6 +1,6 @@
 from pico2d import *
 
-KPU_WIDTH, KPU_HEIGHT = 1000, 600
+KPU_WIDTH, KPU_HEIGHT = 800, 650
 
 def set_limits(x,y):
     extra_pixel = 40
