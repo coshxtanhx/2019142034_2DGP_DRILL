@@ -127,7 +127,7 @@ key_event_table = {
 }
 
 next_state = {
-    ARUN: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, TIMER: ARUN, AD: IDLE},
+    ARUN: {RU: ARUN, LU: ARUN, RD: RUN, LD: RUN, TIMER: ARUN, AD: IDLE},
     SLEEP: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, TIMER: SLEEP, AD: SLEEP},
     IDLE: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, TIMER: SLEEP, AD: ARUN},
     RUN: {RU: IDLE, LU: IDLE, RD: IDLE, LD: IDLE, TIMER: RUN, AD: ARUN}
