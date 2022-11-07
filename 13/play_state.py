@@ -27,7 +27,7 @@ def enter():
     global boy, grass
     boy = Boy()
     grass = Grass()
-    birds = [Bird(randint(100, 700), randint(200, 400)) for i in range(10)]
+    birds = [Bird(randint(100, 700), randint(200, 400), randint(0, 1) * 2 - 1) for i in range(10)]
     game_world.add_object(grass, 0)
     game_world.add_objects(birds, 1)
     game_world.add_object(boy, 1)
