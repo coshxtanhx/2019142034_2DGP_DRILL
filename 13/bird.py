@@ -1,4 +1,5 @@
 from pico2d import *
+from random import randint
 # import game_world
 
 PIXEL_PER_METER = (10.0 / 0.3) # 10 pixel 30 cm
@@ -18,7 +19,7 @@ def convert_dir_int_to_str(idir):
     return sdir
 
 def frame_to_grid(f):
-    w, h = 182, 169
+    w, h = 182, 167
     x = w * (f % 5)
     y = h * (2 - (f // 5))
     return x, y, w, h
@@ -32,17 +33,18 @@ class Bird:
         self.x, self.y = x, y
         self.frame = 0
         self.direction = d
+        self.speed = randint(50, 150) / 100
 
     def draw(self):
         self.image.clip_composite_draw(*frame_to_grid(int(self.frame)), \
             0.0, convert_dir_int_to_str(self.direction)\
-                , self.x, self.y, 182, 169)
+                , self.x, self.y, 182, 167)
 
     def update(self):
         import game_framework
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 14
         # self.x += self.velocity
-        self.x += self.direction * RUN_SPEED_PPS * game_framework.frame_time
+        self.x += (self.direction * RUN_SPEED_PPS * game_framework.frame_time * self.speed)
         if self.x < 25:
             # game_world.remove_object(self)
             self.direction = 1
