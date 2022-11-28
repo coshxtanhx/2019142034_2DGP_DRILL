@@ -4,6 +4,9 @@ import game_world
 class Ball:
     image = None
 
+    def __del__(self):
+        print(45454545)
+
     def __init__(self, x = 400, y = 300, velocity = 1):
         if Ball.image == None:
             Ball.image = load_image('ball21x21.png')

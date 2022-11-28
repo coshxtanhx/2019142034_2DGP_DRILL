@@ -10,6 +10,9 @@ class Ball:
             Ball.image = load_image('ball21x21.png')
         self.x, self.y, self.fall_speed = random.randint(0, 1600), 70, 0
 
+    def __del__(self):
+        print(454545)
+
     def draw(self):
         self.image.draw(self.x, self.y)
         draw_rectangle(*self.get_bb())

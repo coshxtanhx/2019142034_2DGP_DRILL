@@ -106,6 +106,8 @@ next_state_table = {
 
 
 class Boy:
+    def delete(self):
+        pass
 
     def __init__(self):
         # Boy is only once created, so instance image loading is fine

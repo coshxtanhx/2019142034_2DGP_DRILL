@@ -21,8 +21,8 @@ def enter():
     server.background = Background()
     game_world.add_object(server.background, 0)
 
-    server.balls = [Ball() for _ in range(100)]
-    game_world.add_objects(server.balls, 1)
+    server.balls = Ball()#[Ball() for _ in range(100)]
+    game_world.add_object(server.balls, 1)
 
     game_world.add_collision_pairs(server.boy, server.balls, 'boy:ball')
 

@@ -165,5 +165,5 @@ class Boy:
 
     def fire_ball(self):
         print('FIRE BALL')
-        ball = Ball(self.x, self.y, self.face_dir*2)
-        game_world.add_object(ball, 1)
+        game_world.ball = Ball(self.x, self.y, self.face_dir*2)
+        game_world.add_object(game_world.ball, 1)

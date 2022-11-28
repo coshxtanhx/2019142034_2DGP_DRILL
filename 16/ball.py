@@ -10,6 +10,14 @@ class Ball:
             Ball.image = load_image('ball21x21.png')
         self.x, self.y = randint(50, 1750), randint(50, 1050)
 
+    def delete(self):
+        if self in server.balls:
+            server.balls.remove(self)
+            print('delete')
+
+    def __del__(self):
+        print('__del__')
+        
     def draw(self):
         sx, sy = \
             self.x - server.background.window_left, \
@@ -25,3 +33,4 @@ class Ball:
     def handle_collision(self, other, group):
         if group == 'boy:ball':
             game_world.remove_object(self)
+            #print(len(server.balls))
